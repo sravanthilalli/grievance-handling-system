@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Grievance Handling System</title>
+    <link
+        crossorigin="anonymous"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        rel="stylesheet"
+    />
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .sidebar {
+            min-height: calc(100vh - 56px);
+            background-color: #f8f9fa;
+            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+        .sidebar .nav-link {
+            color: #333;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.25rem;
+            margin: 0.2rem 0;
+        }
+        .sidebar .nav-link:hover {
+            background-color: #e9ecef;
+            color: #007bff;
+        }
+        .sidebar .nav-link.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .sidebar .nav-link i {
+            margin-right: 0.5rem;
+        }
+        .content {
+            padding: 20px;
+        }
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+        }
+        .card {
+            box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+        }
+        .stats-card {
+            border-left: 4px solid;
+            transition: all 0.3s;
+        }
+        .stats-card:hover {
+            transform: translateY(-3px);
+        }
+        .stats-card.primary {
+            border-left-color: #007bff;
+        }
+        .stats-card.success {
+            border-left-color: #28a745;
+        }
+        .stats-card.warning {
+            border-left-color: #ffc107;
+        }
+        .stats-card.info {
+            border-left-color: #17a2b8;
+        }
+        .officer-login {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            padding: 8px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .officer-login:hover {
+            background-color: #2980b9;
+        }
+
+        .hero-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #007bff, #2c3e50);
+            color: white;
+            text-align: left;
+        }
+
+        .hero-section h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn-register {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-register:hover {
+            background-color: #dcdde1;
+            color: #2c3e50;
+        }
+
+        .hero-image {
+            max-width: 80%; /* Adjusted size */
+            width: 100%;    /* Makes it responsive */
+            height: auto;   /* Preserves aspect ratio */
+            border-radius: 10px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-section {
+            padding: 60px 0;
+            text-align: center;
+     
+        }
+
+        .feature-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .feature-box {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .feature-box i {
+            font-size: 40px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        .feature-box h3 {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .feature-box p {
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+
+        .testimonial-section {
+            padding: 60px 0;
+            text-align: center;
+           
+            color: black;
+        }
+
+        .testimonial-section h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .testimonial {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .testimonial h4 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer {
+            padding: 20px 0;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'dashboard' %}">
+                <i class="bi bi-shield-check"></i> GHS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    {% if user.is_authenticated %}
+                        {% if user.role in 'staff,admin' %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'department-dashboard' %}">
+                                <i class="bi bi-building"></i> Department
+                            </a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'dashboard' %}">
+                                <i class="bi bi-speedometer2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'grievance-list' %}">
+                                <i class="bi bi-file-text"></i> Grievances
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'analytics-dashboard' %}">
+                                <i class="bi bi-graph-up"></i> Analytics
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'generate-report' %}">
+                                <i class="bi bi-file-earmark-spreadsheet"></i> Reports
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+                <ul class="navbar-nav">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-person-circle"></i> {{ user.username }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a class="dropdown-item" href="{% url 'profile' %}">
+                                    <i class="bi bi-person"></i> Profile
+                                </a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <a class="dropdown-item" href="{% url 'logout' %}">
+                                    <i class="bi bi-box-arrow-right"></i> Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">
+                            <i class="bi bi-box-arrow-in-right"></i> Login
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">
+                            <i class="bi bi-person-plus"></i> Register
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container-fluid hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1>Welcome to the Grievance Handling System</h1>
+                    <p>
+                        Public can register grievances related to Information Technology, Management, 
+                        Human Resources, Finance, Operations, and Marketing. Your issues, resolved efficiently.
+                    </p>
+                    <a class="btn btn-register" href="{% url 'register' %}">Register Now</a>
+                </div>
+                <div class="col-md-6">
+                    <img
+                        alt="Illustration of people solving complaints"
+                        class="hero-image"
+                        src="https://storage.googleapis.com/a1aa/image/qJQpPxaQpj4IA9J1NzGonsVJ7aSZeEVfIN7aQsUjcFp18hyTA.jpg"
+                    />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="container feature-section">
+        <h2 class="mb-5">Our Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-file-signature"></i>
+                    <h3>Submit Grievances</h3>
+                    <p>Submit grievances quickly and securely using our streamlined form.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-eye"></i>
+                    <h3>Track Progress</h3>
+                    <p>Monitor the status of your grievance in real-time with automated notifications.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-box">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Role-Based Access</h3>
+                    <p>Access information based on your role, ensuring privacy and security.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Testimonials Section -->
+        <div class="container testimonial-section">
+            <h2>What Users Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        "Efficient and fast grievance resolution. Highly recommended!"
+                        <h4>- Priya Sharma</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        "I was able to track my issue every step of the way. Great system!"
+                        <h4>- Ravi Kumar</h4>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial">
+                        "Very user-friendly and helpful for resolving IT-related complaints."
+                        <h4>- Sneha Gupta</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer style="margin-top: 10px;">
+            <p>© 2024 Grievance Handling System. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

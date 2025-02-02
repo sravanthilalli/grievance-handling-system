@@ -1,0 +1,5 @@
+Django>=4.0
+python-dotenv
+mysqlclient
+crispy-forms
+crispy-bootstrap5
